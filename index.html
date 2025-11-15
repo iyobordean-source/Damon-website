@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Iyobor Dean Aisosa — Portfolio</title>
+  <meta name="description" content="Animated portfolio with light/dark mode, blobs, shapes, typed text, project reveals, and social icons."/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader" aria-hidden="true"> 
+    <div class="loader-inner">
+      <div class="logo-in">ID</div>
+      <div class="loader-name">Iyobor Dean Aisosa</div>
+    </div>
+  </div>
+
+  <!-- Floating background elements -->
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="bg-shapes" aria-hidden="true">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+  </div>
+
+  <button id="toTop" class="to-top" aria-label="Scroll to top">↑</button>
+
+  <header class="header" id="top">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo-mark">ID</div>
+        <div class="brand-text">
+          <div class="brand-name">Iyobor Dean Aisosa</div>
+          <div class="brand-sub">Front-end Developer</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" class="icon-btn" aria-pressed="false" title="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero section" id="hero" aria-label="Hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1 class="hero-title">Hi — I'm <span class="name">Dean</span></h1>
+          <h2 class="hero-role">
+            <span id="roleText" class="typed"></span><span class="cursor" aria-hidden="true"></span>
+          </h2>
+          <p class="hero-sub reveal-text">
+            I build clean, animated and responsive websites. I care about accessibility, performance and delightful interactions.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn primary">See projects</a>
+            <a href="#contact" class="btn ghost">Let's talk</a>
+          </div>
+        </div>
+
+        <aside class="hero-right card reveal-card">
+          <img class="avatar" src="assets/IMG-20251004-WA0028.jpg" alt="Profile placeholder" />
+          <div class="profile-meta">
+            <div>
+              <strong>Front-end Developer</strong>
+              <div class="muted">HTML • CSS • JavaScript</div>
+            </div>
+          </div>
+
+          <div class="tags">
+            <span class="tag">Responsive</span>
+            <span class="tag">Accessible</span>
+            <span class="tag">Modern CSS</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h3 class="section-title reveal-text">About</h3>
+        <p class="lead about-text" id="aboutText">
+          I'm a front-end developer focused on crafting interactive and accessible user interfaces. I enjoy turning designs into fast and responsive web pages.
+        </p>
+
+        <div class="about-grid reveal-grid">
+          <div class="card small">
+            <div class="card-head">Skills</div>
+            <div class="muted">HTML • CSS • JavaScript • Git</div>
+          </div>
+          <div class="card small">
+            <div class="card-head">Education</div>
+            <div class="muted">Student at Techedu</div>
+          </div>
+          <div class="card small">
+            <div class="card-head">Availability</div>
+            <div class="muted">Open for freelance</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h3 class="section-title reveal-text">Projects</h3>
+        <div class="project-grid">
+          <article class="project-card reveal-card" tabindex="0">
+            <img src="assets/IMG-20251009-WA0025.jpg" alt="Netflix clone" />
+            <h4 class="project-title">Netflix Clone</h4>
+            <p class="muted">Responsive landing page clone demonstrating layout and media queries.</p>
+          </article>
+
+          <article class="project-card reveal-card" tabindex="0">
+            <img src="assets/IMG-20251009-WA0023.jpg" alt="Calculator" />
+            <h4 class="project-title">Calculator</h4>
+            <p class="muted">Interactive calculator built using pure JavaScript and keyboard support.</p>
+          </article>
+
+          <article class="project-card reveal-card" tabindex="0">
+            <img src="assets/IMG-20251009-WA0024.jpg" alt="landing-page" />
+            <h4 class="project-title">Landing Page</h4>
+            <p class="muted">A landing-page with animated designs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h3 class="section-title reveal-text">Contact</h3>
+        <h4 class="connect-text typed-small" id="contactTyped"></h4>
+
+        <p class="muted">Want to work together? Send me a message or connect on social media.</p>
+
+        <form class="contact-form" onsubmit="handleContact(event)">
+          <input name="name" placeholder="Your name" required />
+          <input name="email" type="email" placeholder="Email address" required />
+          <textarea name="message" placeholder="Message" required></textarea>
+
+          <!-- Options to choose sending method -->
+          <select id="sendMethod" required>
+            <option value="email">Send via Email</option>
+            <option value="whatsapp">Send via WhatsApp</option>
+          </select>
+
+          <button class="btn primary" type="submit">Send Message</button>
+        </form>
+
+        <div class="socials">
+          <a href="https://wa.me/2347043400958" class="social" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="" />
+          </a>
+          <a href="https://facebook.com" class="social" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="" />
+          </a>
+          <a href="https://instagram.com" class="social" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="" />
+          </a>
+          <a href="https://linkedin.com" class="social" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="" />
+          </a>
+          <a href="mailto:iyobordean@gmail.com" class="social" target="_blank" rel="noopener" aria-label="Email">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="muted">© 2025 Iyobor Dean Aisosa</div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
